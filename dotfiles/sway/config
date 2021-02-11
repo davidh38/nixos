@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-#set $term alacritty
+set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -71,10 +71,10 @@ input "5426:515:Razer_Razer_BlackWidow_Chroma" {
 # Basics:
 #
 # Start a terminal
-#    bindsym $mod+Return exec $term
+    bindsym $mod+Return exec $term
 
 # Kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+Shift+apostrophe kill
 
 # Start your launcher
 bindsym $mod+e exec $menu

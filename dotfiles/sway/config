@@ -7,12 +7,7 @@
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
-set $mod Mod1
-# Home row direction keys, like vim
-set $left h
-set $down j
-set $up k
-set $right l
+set $mod Mod4
 # Your preferred terminal emulator
 set $term alacritty
 # Your preferred application launcher
@@ -24,6 +19,12 @@ input "5426:515:Razer_Razer_BlackWidow_Chroma" {
 	xkb_layout dvorak
         xkb_options caps:ctrl_modifier
 }
+
+# Home row direction keys, like vim
+set $left h
+set $down n
+set $up t
+set $right s 
 
 
 ### Output configuration
@@ -87,7 +88,7 @@ bindsym $mod+e exec $menu
 floating_modifier $mod normal
 
 # Reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+j reload
 
 # Exit sway (logs you out of your Wayland session)
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
@@ -152,8 +153,8 @@ bindsym $mod+Shift+0 move container to workspace number 10
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
+    bindsym $mod+o layout stacking
+    bindsym $mod+comma layout tabbed
     bindsym $mod+period layout toggle split
 
     # Make the current focus fullscreen

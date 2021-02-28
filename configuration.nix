@@ -33,6 +33,11 @@ environment.pathsToLink = ["/libexec"];
 #     telegram-purple
       slurp #screenshots in wayland
       wev # used find keyboards symbol names
+      gnumake # for vterm compiling 
+      cmake # for vterm compiling
+      libtool # for vterm compiling
+      gcc
+      thunderbird
     ];
   };
 
@@ -125,8 +130,9 @@ useXkbConfig = true;
 # services.xserver.xkbOptions = "eurosign:e"; 
 # # Enable CUPS to print documents.  
 # # services.printing.enable = true; 
-# # Enable sound.  # sound.enable = true; 
-# # hardware.pulseaudio.enable = true; 
+# # Enable sound.  
+sound.enable = true; 
+hardware.pulseaudio.enable = true; 
 # # Enable touchpad support (enabled default in most desktopManager).  
 # # services.xserver.libinput.enable = true; 
 # 
@@ -147,6 +153,9 @@ environment.systemPackages = with pkgs; [ wget
 					ripgrep 
 					fd 
 					dropbox-cli 
+((emacsPackagesNgGen emacs).emacsWithPackages (epkgs: [
+    epkgs.vterm
+  ]))
 ];
  networking.firewall = {
     allowedTCPPorts = [ 17500 ];

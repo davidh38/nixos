@@ -30,6 +30,7 @@ environment.pathsToLink = ["/libexec"];
       alacritty
       xwayland
       docker
+      python3
 #     telegram-purple
       slurp #screenshots in wayland
       wev # used find keyboards symbol names
